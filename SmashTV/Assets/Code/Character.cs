@@ -17,6 +17,7 @@ public abstract class Character
     protected int health;
     protected float speed;
     protected Rigidbody rigidBody;
+    protected Transform transform;
 
     public enum CharacterType
     {
@@ -25,8 +26,9 @@ public abstract class Character
     }
     protected CharacterType type;
 
-    abstract public void Move(UnityEngine.Rigidbody rb);
-    abstract public int CheckHealth();
-    abstract public void GainHealth(int amount);
-    abstract public void LoseHealth(int amount);
+    public abstract void Move(UnityEngine.Rigidbody rb);
+    public abstract void LookTowards(Vector3 target);
+    public abstract int CheckHealth();
+    public abstract void GainHealth(int amount);
+    public abstract void LoseHealth(int amount);
 }

@@ -8,6 +8,7 @@
  * This class handles the Player and it's base functionality
  * 
  *************************/
+using System;
 using System.Numerics;
 using UnityEngine;
 
@@ -27,6 +28,12 @@ public class Player : Character
     }
 
     override
+    public void LookTowards(UnityEngine.Vector3 target)
+    {
+        transform.LookAt(target);
+    }
+
+    override
     public int CheckHealth()
     {
         return 0;
@@ -42,5 +49,10 @@ public class Player : Character
     public void LoseHealth(int amount)
     {
         this.health -= amount;
+    }
+
+    public void SetTransform(Transform t)
+    {
+        this.transform = t;
     }
 }
