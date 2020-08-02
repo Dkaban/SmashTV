@@ -13,6 +13,9 @@ using UnityEngine;
 
 public class PlayerDriver : MonoBehaviour
 {
+    //Prefabs
+    public GameObject BulletObjectPrefab;
+
     public Player player = new Player(Vector3.zero, Character.CharacterType.Player, 5.0f);
     private Rigidbody rigidBody;
 
@@ -37,7 +40,8 @@ public class PlayerDriver : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-
+            GameObject bulletGO = GameObject.Instantiate(BulletObjectPrefab);
+            bulletGO.GetComponent<PlayerBullet>().Initialize(mouseWorldSpace, transform);
         }
     }
 

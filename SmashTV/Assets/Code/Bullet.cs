@@ -3,18 +3,17 @@
  * Bullet.cs
  * 
  * Author: Dustin Kaban
- * Date: August 1st, 2020
+ * Date: August 2nd, 2020
  * 
  * This is an abstract class to control how bullets are set up and used
  * 
  *************************/
 
+using System.Collections;
 using UnityEngine;
 
-public abstract class Bullet
+public abstract class Bullet : MonoBehaviour
 {
-    protected Vector3 destination;
-    protected float speed;
-
-    public abstract void DestroyBullet(GameObject bulletObject);
+    public abstract void Initialize(Vector3 target, Transform spawnTransform);
+    public abstract void DestroyBullet();
 }
