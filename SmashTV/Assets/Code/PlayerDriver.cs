@@ -13,6 +13,9 @@ using UnityEngine;
 
 public class PlayerDriver : MonoBehaviour
 {
+    //Default Variables
+    private const float PLAYER_CENTER_OF_MASS = 0.5f;
+
     //Prefabs
     public GameObject BulletObjectPrefab;
 
@@ -47,9 +50,13 @@ public class PlayerDriver : MonoBehaviour
 
     private void UpdateMousePosition()
     {
-        mouseScreenPosition = Input.mousePosition;
-        mouseScreenPosition.z = 50;
-        mouseWorldSpace = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
-        mouseWorldSpace.y = 0;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit,250.0f))
+        {
+            //This is where we hit
+            mouseWorldSpace = hit.point;
+            mouseWorldSpace.y = PLAYER_CENTER_OF_MASS;
+        }
     }
 }

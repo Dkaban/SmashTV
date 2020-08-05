@@ -32,6 +32,14 @@ public class PlayerBullet : Bullet
         DestroyBullet();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Enemy")
+        {
+            DestroyBullet();
+        }
+    }
+
     override
     public void DestroyBullet()
     {
