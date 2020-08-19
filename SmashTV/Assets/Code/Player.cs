@@ -21,32 +21,27 @@ public class Player : Character
         this.speed = speed;
     }
 
-    override
-    public void Move(Rigidbody rb)
+    public override void Move(Rigidbody rb)
     {
         rb.velocity = new UnityEngine.Vector3(Input.GetAxis("Horizontal")*this.speed, 0.0f, Input.GetAxis("Vertical")*this.speed);
     }
 
-    override
-    public void LookTowards(UnityEngine.Vector3 target)
+    public override void LookTowards(UnityEngine.Vector3 target)
     {
         transform.LookAt(target);
     }
 
-    override
-    public int CheckHealth()
+    public override int CheckHealth()
     {
         return 0;
     }
 
-    override
-    public void GainHealth(int amount)
+    public override void GainHealth(int amount)
     {
         this.health += amount;
     }
 
-    override
-    public void LoseHealth(int amount)
+    public override void LoseHealth(int amount)
     {
         this.health -= amount;
     }

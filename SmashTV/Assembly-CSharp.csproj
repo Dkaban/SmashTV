@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Assets\Code\Bullet.cs" />
     <Compile Include="Assets\Code\Character.cs" />
+    <Compile Include="Assets\Code\Enemy.cs" />
+    <Compile Include="Assets\Code\EnemyDriver.cs" />
     <Compile Include="Assets\Code\Player.cs" />
     <Compile Include="Assets\Code\PlayerBullet.cs" />
     <Compile Include="Assets\Code\PlayerDriver.cs" />
