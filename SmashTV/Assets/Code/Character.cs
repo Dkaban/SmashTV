@@ -26,8 +26,6 @@ public abstract class Character
     }
     protected CharacterType type;
 
-    public abstract void Move(UnityEngine.Rigidbody rb);
-    public abstract void LookTowards(Vector3 target);
     public abstract int CheckHealth();
     public abstract void GainHealth(int amount);
     public abstract void LoseHealth(int amount);

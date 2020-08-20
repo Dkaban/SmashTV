@@ -9,17 +9,18 @@
  * 
  *************************/
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : Character
 {
-    protected readonly int MAX_HEALTH = 10;
-    public Enemy(Vector3 spawnLocation)
+    protected readonly int MAX_HEALTH = 4;
+
+    public Enemy(Vector3 spawnLocation, Transform enemyTransform, float movementSpeed)
     {
         this.health = MAX_HEALTH;
         this.location = spawnLocation;
+        this.transform = enemyTransform;
+        this.speed = movementSpeed;
     }
 
     public override int CheckHealth()
@@ -30,6 +31,11 @@ public class Enemy : Character
     public override void LoseHealth(int amount)
     {
         this.health -= amount;
+
+        if(this.health <= 0)
+        {
+            Death();
+        }
     }
 
     public override void GainHealth(int amount)
@@ -37,13 +43,15 @@ public class Enemy : Character
         this.health += amount;
     }
 
-    public override void LookTowards(Vector3 target)
+    public float GetMovementSpeed()
     {
-
+        return this.speed;
     }
 
-    public override void Move(Rigidbody rb)
+    private void Death()
     {
-
+        //Need to remove this from the EnemySpawner enemyObjectList as well.
+        transform.GetComponent<EnemyDriver>().enemySpawner.RemoveFromList(transform.gameObject);
+        Object.Destroy(this.transform.gameObject);
     }
 }

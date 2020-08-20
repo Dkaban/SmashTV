@@ -8,8 +8,7 @@
  * This class handles the Player and it's base functionality
  * 
  *************************/
-using System;
-using System.Numerics;
+
 using UnityEngine;
 
 public class Player : Character
@@ -21,12 +20,12 @@ public class Player : Character
         this.speed = speed;
     }
 
-    public override void Move(Rigidbody rb)
+    public void Move(Rigidbody rb)
     {
         rb.velocity = new UnityEngine.Vector3(Input.GetAxis("Horizontal")*this.speed, 0.0f, Input.GetAxis("Vertical")*this.speed);
     }
 
-    public override void LookTowards(UnityEngine.Vector3 target)
+    public void LookTowards(UnityEngine.Vector3 target)
     {
         transform.LookAt(target);
     }

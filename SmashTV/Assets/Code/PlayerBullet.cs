@@ -15,6 +15,7 @@ using UnityEngine;
 public class PlayerBullet : Bullet
 {
     private const float BULLET_SPEED = 10.0f;
+    private const int BULLET_DAMAGE = 1;
     override
     public void Initialize(Vector3 target, Transform spawnTransform)
     {
@@ -36,6 +37,7 @@ public class PlayerBullet : Bullet
     {
         if(other.tag == "Enemy")
         {
+            other.GetComponent<EnemyDriver>().enemy.LoseHealth(BULLET_DAMAGE);
             DestroyBullet();
         }
     }
