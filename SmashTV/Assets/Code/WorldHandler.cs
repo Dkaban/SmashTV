@@ -9,18 +9,15 @@
  * 
  *************************/
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WorldHandler : MonoBehaviour
 {
-    #region SINGLETON SETUP
-    public static WorldHandler Instance { get;  set; }
+    public static WorldHandler Instance { get; private set; }
+    public GameObject playerObject;
+
     private void Awake()
     {
         Instance = this;
     }
-    #endregion
-    public GameObject playerObject;
 }

@@ -28,8 +28,8 @@ public class PlayerDriver : MonoBehaviour
 
     private void Awake()
     {
-        player.SetTransform(transform);
-        rigidBody = this.GetComponent<Rigidbody>();
+        player.SetTransform(this.transform);
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
@@ -37,6 +37,11 @@ public class PlayerDriver : MonoBehaviour
         player.Move(rigidBody);
         UpdateMousePosition();
         player.LookTowards(mouseWorldSpace);
+    }
+
+    private void Start()
+    {
+        UIHandler.Instance.InitializePlayerUI(player.GetHealth());
     }
 
     private void Update()

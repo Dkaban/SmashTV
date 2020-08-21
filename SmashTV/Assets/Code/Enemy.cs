@@ -14,25 +14,26 @@ using UnityEngine;
 public class Enemy : Character
 {
     protected readonly int MAX_HEALTH = 4;
+    public readonly int COLLISION_DAMAGE = 1;
 
     public Enemy(Vector3 spawnLocation, Transform enemyTransform, float movementSpeed)
     {
-        this.health = MAX_HEALTH;
-        this.location = spawnLocation;
-        this.transform = enemyTransform;
-        this.speed = movementSpeed;
+        health = MAX_HEALTH;
+        location = spawnLocation;
+        transform = enemyTransform;
+        speed = movementSpeed;
     }
 
-    public override int CheckHealth()
+    public override int GetHealth()
     {
-        return this.health;
+        return health;
     }
 
     public override void LoseHealth(int amount)
     {
-        this.health -= amount;
+        health -= amount;
 
-        if(this.health <= 0)
+        if(health <= 0)
         {
             Death();
         }
@@ -40,18 +41,18 @@ public class Enemy : Character
 
     public override void GainHealth(int amount)
     {
-        this.health += amount;
+        health += amount;
     }
 
     public float GetMovementSpeed()
     {
-        return this.speed;
+        return speed;
     }
 
     private void Death()
     {
         //Need to remove this from the EnemySpawner enemyObjectList as well.
         transform.GetComponent<EnemyDriver>().enemySpawner.RemoveFromList(transform.gameObject);
-        Object.Destroy(this.transform.gameObject);
+        Object.Destroy(transform.gameObject);
     }
 }

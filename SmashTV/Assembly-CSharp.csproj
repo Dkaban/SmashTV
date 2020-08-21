@@ -71,6 +71,7 @@
     <Compile Include="Assets\Code\Player.cs" />
     <Compile Include="Assets\Code\PlayerBullet.cs" />
     <Compile Include="Assets\Code\PlayerDriver.cs" />
+    <Compile Include="Assets\Code\UIHandler.cs" />
     <Compile Include="Assets\Code\WorldHandler.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Dusti/Desktop/Git/SmashTV/SmashTV/SmashTV/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

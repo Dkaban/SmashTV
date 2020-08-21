@@ -13,26 +13,27 @@ using UnityEngine;
 
 public class Player : Character
 {
-    public Player(UnityEngine.Vector3 startingLoc, CharacterType charType, float speed)
+    public Player(Vector3 startingLoc, CharacterType charType, float speed)
     {
         this.location = startingLoc;
         this.type = charType;
         this.speed = speed;
+        this.health = 10;
     }
 
     public void Move(Rigidbody rb)
     {
-        rb.velocity = new UnityEngine.Vector3(Input.GetAxis("Horizontal")*this.speed, 0.0f, Input.GetAxis("Vertical")*this.speed);
+        rb.velocity = new Vector3(Input.GetAxis("Horizontal")*this.speed, 0.0f, Input.GetAxis("Vertical")*this.speed);
     }
 
-    public void LookTowards(UnityEngine.Vector3 target)
+    public void LookTowards(Vector3 target)
     {
-        transform.LookAt(target);
+        this.transform.LookAt(target);
     }
 
-    public override int CheckHealth()
+    public override int GetHealth()
     {
-        return 0;
+        return this.health;
     }
 
     public override void GainHealth(int amount)
@@ -43,6 +44,7 @@ public class Player : Character
     public override void LoseHealth(int amount)
     {
         this.health -= amount;
+        UIHandler.Instance.SetHealth(this.health);
     }
 
     public void SetTransform(Transform t)

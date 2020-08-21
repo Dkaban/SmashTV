@@ -13,11 +13,11 @@ using UnityEngine;
 
 public abstract class Character
 {
-    protected Vector3 location;
-    protected int health;
-    protected float speed;
-    protected Rigidbody rigidBody;
-    protected Transform transform;
+    private protected Vector3 location;
+    private protected int health;
+    private protected float speed;
+    private protected Rigidbody rigidBody;
+    private protected Transform transform;
 
     public enum CharacterType
     {
@@ -26,7 +26,7 @@ public abstract class Character
     }
     protected CharacterType type;
 
-    public abstract int CheckHealth();
+    public abstract int GetHealth();
     public abstract void GainHealth(int amount);
     public abstract void LoseHealth(int amount);
 }
