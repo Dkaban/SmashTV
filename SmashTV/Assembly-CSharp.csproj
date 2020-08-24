@@ -67,6 +67,8 @@
     <Compile Include="Assets\Code\Character.cs" />
     <Compile Include="Assets\Code\Enemy.cs" />
     <Compile Include="Assets\Code\EnemyDriver.cs" />
+    <Compile Include="Assets\Code\EnemyMelee.cs" />
+    <Compile Include="Assets\Code\EnemyShooter.cs" />
     <Compile Include="Assets\Code\EnemySpawner.cs" />
     <Compile Include="Assets\Code\Player.cs" />
     <Compile Include="Assets\Code\PlayerBullet.cs" />

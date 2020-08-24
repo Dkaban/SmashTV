@@ -19,6 +19,7 @@ public class EnemySpawner : MonoBehaviour
     protected private const int ENEMY_COUNT_TO_SPAWN = 3;
     public List<GameObject> enemyObjectList = new List<GameObject>();
     protected private const float SPAWN_DELAY = 2.5f;
+    protected private const float DEFAULT_SPAWN_HEIGHT = 0.5f;
     private WorldHandler worldHandler;
     private bool spawnerRunning = false;
 
@@ -34,6 +35,7 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(SPAWN_DELAY);
             spawnerRunning = true;
             GameObject enemyObject = Instantiate(enemyPrefabObject) as GameObject;
+            enemyObject.transform.position = new Vector3(this.transform.position.x, DEFAULT_SPAWN_HEIGHT, this.transform.position.z);
             enemyObject.GetComponent<EnemyDriver>().enemySpawner = this;
             enemyObjectList.Add(enemyObject);
         }

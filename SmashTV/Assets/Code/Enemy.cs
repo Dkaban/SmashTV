@@ -13,12 +13,18 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    protected readonly int MAX_HEALTH = 4;
+    //protected readonly int MAX_HEALTH = 4;
     public readonly int COLLISION_DAMAGE = 1;
+
+    public enum EnemyType
+    {
+        Melee,
+        Shooter
+    }
 
     public Enemy(Vector3 spawnLocation, Transform enemyTransform, float movementSpeed)
     {
-        health = MAX_HEALTH;
+        //health = MAX_HEALTH;
         location = spawnLocation;
         transform = enemyTransform;
         speed = movementSpeed;
@@ -42,6 +48,11 @@ public class Enemy : Character
     public override void GainHealth(int amount)
     {
         health += amount;
+    }
+
+    public void SetHealth(int amount)
+    {
+        health = amount;
     }
 
     public float GetMovementSpeed()
