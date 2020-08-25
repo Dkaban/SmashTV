@@ -15,13 +15,7 @@ public class EnemyDriver : MonoBehaviour
 {
     public EnemySpawner enemySpawner;
     public Enemy enemy;
-    public EnemyType typeOfEnemy;
-
-    public enum EnemyType
-    {
-        Melee,
-        Shooter
-    }
+    public EnemyType enemyType;
 
     void Awake()
     {

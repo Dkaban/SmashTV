@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawner: {fileID: 0}
-  typeOfEnemy: 1
+  enemyType: 1
 --- !u!114 &6005873434885943619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +138,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2bc842d3860d0f4d8c2fe3865aa8257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletObjectPrefab: {fileID: 2700130173558844125, guid: 4fc727fefd03dd14cb99ca3ac184bdec,
+    type: 3}

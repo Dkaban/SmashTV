@@ -11,16 +11,16 @@
 
 using UnityEngine;
 
+public enum EnemyType
+{
+    Melee,
+    Shooter
+}
+
 public class Enemy : Character
 {
     //protected readonly int MAX_HEALTH = 4;
     public readonly int COLLISION_DAMAGE = 1;
-
-    public enum EnemyType
-    {
-        Melee,
-        Shooter
-    }
 
     public Enemy(Vector3 spawnLocation, Transform enemyTransform, float movementSpeed)
     {
