@@ -62,6 +62,9 @@ public class Enemy : Character
 
     private void Death()
     {
+        //Point amount to alot should be generic
+        UIHandler.Instance.AddPoints(1);
+
         //Need to remove this from the EnemySpawner enemyObjectList as well.
         transform.GetComponent<EnemyDriver>().enemySpawner.RemoveFromList(transform.gameObject);
         Object.Destroy(transform.gameObject);

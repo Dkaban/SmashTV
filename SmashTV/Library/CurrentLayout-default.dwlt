@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 231, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 95
+  controlID: 16
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 14
+  controlID: 15
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 342}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 15
+  controlID: 126
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -290,8 +290,8 @@ MonoBehaviour:
     y: 0
     width: 1408
     height: 608
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 16}
@@ -336,8 +336,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/Prefabs/Enemy
+    m_Folders: []
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -349,7 +348,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 1e2d0000
     m_LastClickedID: 11550
-    m_ExpandedIDs: 00000000d03300004a3400004c3400004e340000503400005234000054340000
+    m_ExpandedIDs: 00000000d6330000623400006434000066340000683400006a3400006c340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -377,7 +376,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000d03300004a3400004c34000054340000
+    m_ExpandedIDs: ffffffff00000000d633000062340000643400006634000068340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -502,7 +501,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 72fbffff
+      m_ExpandedIDs: 40d6ffff72fbffffa8330000ac330000ce330000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
