@@ -68,6 +68,7 @@
      <Compile Include="Assets\Code\EnemyShooter.cs" />
      <Compile Include="Assets\Code\EnemyDriver.cs" />
      <Compile Include="Assets\Code\Player.cs" />
+     <Compile Include="Assets\Code\ButtonHandler.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Dusti/Desktop/Unity Projects/SmashTVProjectFolder/SmashTV/SmashTV/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
