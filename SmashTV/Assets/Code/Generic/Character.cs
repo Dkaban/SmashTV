@@ -16,6 +16,8 @@ public abstract class Character
     private protected Vector3 location;
     private protected int health;
     private protected float speed;
+    private protected int experience;
+    private protected int level;
     private protected Rigidbody rigidBody;
     private protected Transform transform;
 

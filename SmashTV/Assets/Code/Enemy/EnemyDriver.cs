@@ -17,9 +17,9 @@ public class EnemyDriver : MonoBehaviour
     public Enemy enemy;
     public EnemyType enemyType;
 
-    void Awake()
+    private void Awake()
     {
-        enemy = new Enemy(Vector3.zero, transform, 2.0f);
+        enemy = new Enemy(4,Vector3.zero, transform, 2.0f,1,1);
     }
 
     private void OnCollisionEnter(Collision collision)

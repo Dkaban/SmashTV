@@ -19,15 +19,17 @@ public enum EnemyType
 
 public class Enemy : Character
 {
-    //protected readonly int MAX_HEALTH = 4;
     public readonly int COLLISION_DAMAGE = 1;
+    private readonly int experienceValue = 1;
 
-    public Enemy(Vector3 spawnLocation, Transform enemyTransform, float movementSpeed)
+    public Enemy(int baseHealth, Vector3 spawnLocation, Transform enemyTransform, float movementSpeed, int baseExperience, int baseLevel)
     {
-        //health = MAX_HEALTH;
+        health = baseHealth;
         location = spawnLocation;
         transform = enemyTransform;
         speed = movementSpeed;
+        experienceValue = baseExperience;
+        level = baseLevel;
     }
 
     public override int GetHealth()
@@ -65,8 +67,13 @@ public class Enemy : Character
         //Point amount to alot should be generic
         UIHandler.Instance.AddPoints(1);
 
+        //Increase the players Experience
+        WorldHandler.Instance.playerDriver.SetExperience(experienceValue);
+
         //Need to remove this from the EnemySpawner enemyObjectList as well.
         transform.GetComponent<EnemyDriver>().enemySpawner.RemoveFromList(transform.gameObject);
+
+        //Destroy the Enemy Object
         Object.Destroy(transform.gameObject);
     }
 }

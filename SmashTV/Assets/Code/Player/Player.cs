@@ -9,16 +9,39 @@
  * 
  *************************/
 
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : Character
 {
-    public Player(Vector3 startingLoc, CharacterType charType, float speed)
+    //To help keep track of when the player levels up
+    private UnityEvent levelUpEvent = new UnityEvent();
+
+    public Player(Vector3 startingLoc, CharacterType charType, float speed, int health, int experience, int level)
     {
         this.location = startingLoc;
         this.type = charType;
         this.speed = speed;
-        this.health = 10;
+        this.health = health;
+        this.experience = experience;
+        this.level = level;
+        levelUpEvent.AddListener(CheckForLevelUp);
+    }
+
+    private void CheckForLevelUp()
+    {
+        //TODO: Create a scaling experience required system.
+        //Current System: Each level requires 2n experience (n being the users current level)
+        if(this.experience >= (2*level))
+        {
+            //Level Up
+            this.level++;
+            //Reset experience to 0
+            this.experience = 0;
+            //Update the UI
+            UIHandler.Instance.SetLevel(this.level);
+        }
     }
 
     public void Move(Rigidbody rb)
@@ -45,6 +68,19 @@ public class Player : Character
     {
         this.health -= amount;
         UIHandler.Instance.SetHealth(this.health);
+    }
+
+    public int GetExperience()
+    {
+        return this.experience;
+    }
+
+    public void SetExperience(int amount)
+    {
+        this.experience += amount;
+
+        //We need to check for a Level Up
+        levelUpEvent.Invoke();
     }
 
     public void SetTransform(Transform t)

@@ -24,6 +24,8 @@ public class UIHandler : MonoBehaviour
     public Text pointText;
     private int _points;
 
+    public Text levelText;
+
     private void Awake()
     {
         Instance = this;
@@ -40,6 +42,11 @@ public class UIHandler : MonoBehaviour
     public void SetHealth(int amount)
     {
         playerHealthSlider.value = amount;
+    }
+
+    public void SetLevel(int amount)
+    {
+        levelText.text = "Level " + amount;
     }
 
     private IEnumerator AliveTimer()

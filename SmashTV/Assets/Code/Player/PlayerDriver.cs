@@ -19,7 +19,7 @@ public class PlayerDriver : MonoBehaviour
     //Prefabs
     public GameObject BulletObjectPrefab;
 
-    public Player player = new Player(Vector3.zero, Character.CharacterType.Player, 5.0f);
+    public Player player = new Player(Vector3.zero, Character.CharacterType.Player, 5.0f, 10, 0, 0);
     private Rigidbody rigidBody;
 
     //Variables for Mouse
@@ -63,5 +63,10 @@ public class PlayerDriver : MonoBehaviour
             mouseWorldSpace = hit.point;
             mouseWorldSpace.y = PLAYER_CENTER_OF_MASS;
         }
+    }
+
+    public void SetExperience(int amount)
+    {
+        player.SetExperience(amount);
     }
 }

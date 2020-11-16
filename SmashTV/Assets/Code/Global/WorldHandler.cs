@@ -15,9 +15,11 @@ public class WorldHandler : MonoBehaviour
 {
     public static WorldHandler Instance { get; private set; }
     public GameObject playerObject;
+    public PlayerDriver playerDriver;
 
     private void Awake()
     {
         Instance = this;
+        playerDriver = playerObject.GetComponent<PlayerDriver>();
     }
 }
