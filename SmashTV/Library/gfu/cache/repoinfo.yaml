@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2020-11-16T14:17:27.006-08:00
-  initializedAtString: 2020-11-16T14:10:21.108-08:00
+  lastUpdatedAtString: 2020-11-20T11:16:58.385-08:00
+  initializedAtString: 2020-11-20T11:16:58.385-08:00
   currentGitRemote:
     name: origin
     url: https://github.com/Dkaban/SmashTV

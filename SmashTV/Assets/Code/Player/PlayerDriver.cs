@@ -10,15 +10,21 @@
  *************************/
 
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerDriver : MonoBehaviour
 {
-    //Default Variables
+    //To help keep track of when the player levels up
+    private UnityEvent shootEvent = new UnityEvent();
+
+    //For raycasting purposes (how high up do we want to shoot from the player)
+    //Using 0.5 given the player is 1 unit high
     private const float PLAYER_CENTER_OF_MASS = 0.5f;
 
     //Prefabs
     public GameObject BulletObjectPrefab;
 
+    //Create the Player Object
     public Player player = new Player(Vector3.zero, Character.CharacterType.Player, 5.0f, 10, 0, 0);
     private Rigidbody rigidBody;
 
@@ -30,6 +36,7 @@ public class PlayerDriver : MonoBehaviour
     {
         player.SetTransform(this.transform);
         rigidBody = GetComponent<Rigidbody>();
+        shootEvent.AddListener(Shoot);
     }
 
     private void FixedUpdate()
@@ -44,12 +51,17 @@ public class PlayerDriver : MonoBehaviour
         UIHandler.Instance.InitializePlayerUI(player.GetHealth());
     }
 
+    private void Shoot()
+    {
+        GameObject bulletGO = GameObject.Instantiate(BulletObjectPrefab);
+        bulletGO.GetComponent<PlayerBullet>().Initialize(mouseWorldSpace, transform);
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0))
         {
-            GameObject bulletGO = GameObject.Instantiate(BulletObjectPrefab);
-            bulletGO.GetComponent<PlayerBullet>().Initialize(mouseWorldSpace, transform);
+            shootEvent.Invoke();
         }
     }
 
