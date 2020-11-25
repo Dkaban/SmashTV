@@ -25,11 +25,11 @@ public class PlayerDriver : MonoBehaviour
     public GameObject BulletObjectPrefab;
 
     //Create the Player Object
+    [SerializeField]
     public Player player = new Player(Vector3.zero, Character.CharacterType.Player, 5.0f, 10, 0, 0);
     private Rigidbody rigidBody;
 
     //Variables for Mouse
-    private Vector3 mouseScreenPosition;
     private Vector3 mouseWorldSpace;
 
     private void Awake()

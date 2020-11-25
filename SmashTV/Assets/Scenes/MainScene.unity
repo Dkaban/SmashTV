@@ -1083,6 +1083,7 @@ GameObject:
   - component: {fileID: 1295416643}
   - component: {fileID: 1295416645}
   - component: {fileID: 1295416646}
+  - component: {fileID: 1295416647}
   m_Layer: 0
   m_Name: MainGO
   m_TagString: Untagged
@@ -1144,6 +1145,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 194bf8524b108e74b80145cde43d61a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1295416647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295416642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a16aa4c1b9c81f469b3cdc5d2dfc63c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1302806597

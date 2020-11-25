@@ -9,7 +9,6 @@
  * 
  *************************/
 
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -70,6 +69,16 @@ public class Player : Character
         UIHandler.Instance.SetHealth(this.health);
     }
 
+    public void SetSpeed(float amount)
+    {
+        this.speed = amount;
+    }
+
+    public float GetSpeed()
+    {
+        return this.speed;
+    }
+
     public int GetExperience()
     {
         return this.experience;
@@ -81,6 +90,16 @@ public class Player : Character
 
         //We need to check for a Level Up
         levelUpEvent.Invoke();
+    }
+
+    public int GetLevel()
+    {
+        return this.level;
+    }
+
+    public void SetLevel(int level)
+    {
+        this.level = level;
     }
 
     public void SetTransform(Transform t)
